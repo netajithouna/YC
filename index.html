@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Your Choice Trading Terminal — Live Forex, Gold, Crypto & Market Data</title>
+<meta name="description" content="Professional trading terminal with live TradingView charts for Forex pairs, Gold, Silver, Crypto, Indices and Commodities. Real-time market data dashboard.">
+<meta property="og:title" content="Your Choice Trading Terminal">
+<meta property="og:description" content="Live Forex, Gold, Crypto & Market Data — Professional Trading Dashboard">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9782;</text></svg>">
+</head>
+<body>
+
+<!-- NAV -->
+<div id="topbar">
+  <div class="nav-inner">
+    <div class="logo">
+      <span class="logo-text">Your Choice Trading Terminal</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="forex.html">Forex</a></li>
+      <li><a href="commodities.html">Commodities</a></li>
+      <li><a href="crypto.html">Crypto</a></li>
+      <li><a href="indices.html">Indices</a></li>
+      <li><a href="rates.html">Int. Rates</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="analysis.html">Analysis</a></li>
+      <li><a href="calculator.html">Calculator</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="live-badge"><span class="live-dot"></span> LIVE DATA</div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</div>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="forex.html">Forex Pairs</a>
+  <a href="commodities.html">Commodities</a>
+  <a href="crypto.html">Cryptocurrency</a>
+  <a href="indices.html">Indices</a>
+  <a href="rates.html">Interest Rates</a>
+  <a href="news.html">Market News</a>
+  <a href="analysis.html">Market Analysis</a>
+  <a href="calculator.html">Calculator</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- TICKER TAPE -->
+<div id="ticker-wrap">
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {"symbols":[{"proName":"FOREXCOM:XAUUSD","title":"Gold"},{"proName":"FOREXCOM:XAGUSD","title":"Silver"},{"proName":"BITSTAMP:BTCUSD","title":"Bitcoin"},{"proName":"BITSTAMP:ETHUSD","title":"Ethereum"},{"proName":"FOREXCOM:SPXUSD","title":"S&P 500"},{"proName":"FOREXCOM:NSXUSD","title":"NASDAQ"},{"proName":"FOREXCOM:EURUSD","title":"EUR/USD"},{"proName":"FOREXCOM:GBPUSD","title":"GBP/USD"},{"proName":"FOREXCOM:USDJPY","title":"USD/JPY"},{"proName":"TVC:USOIL","title":"WTI Oil"},{"proName":"BINANCE:SOLUSDT","title":"Solana"},{"proName":"FOREXCOM:XPTUSD","title":"Platinum"}],"showSymbolLogo":true,"isTransparent":true,"displayMode":"adaptive","colorTheme":"dark","locale":"en"}
+    </script>
+  </div>
+</div>
+
+<!-- PAGE -->
+<div class="page-wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-tag"><span class="live-dot"></span> REAL-TIME MARKETS</div>
+    <h1>Your Choice<br><em>Trading Terminal</em></h1>
+    <p>Professional-grade market data for Forex, Gold, Silver, Crypto, Indices and Commodities. Powered by live TradingView charts.</p>
+    <div class="hero-btns">
+      <a href="forex.html" class="btn-gold">&#9654; Open Charts</a>
+      <a href="analysis.html" class="btn-outline">&#9650; Market Analysis</a>
+    </div>
+  </section>
+
+  <!-- QUICK ACCESS CARDS -->
+  <div class="sec-hdr">
+    <div>
+      <div class="sec-title">Market <span>Overview</span></div>
+      <div class="sec-sub">Click any card to open live charts</div>
+    </div>
+    <a href="forex.html" class="sec-link">View all &rarr;</a>
+  </div>
+  <div class="gold-line"></div>
+
+  <div class="mkt-grid">
+    <a href="commodities.html" class="mkt-card">
+      <div class="card-icon">&#129360;</div>
+      <div class="card-label">Commodity</div>
+      <div class="card-sym">XAU/USD</div>
+      <div class="card-name">Gold Spot</div>
+      <div class="card-price">Live →</div>
+      <div class="card-chg up">TradingView Real-Time</div>
+    </a>
+    <a href="commodities.html" class="mkt-card">
+      <div class="card-icon">&#9899;</div>
+      <div class="card-label">Commodity</div>
+      <div class="card-sym">XAG/USD</div>
+      <div class="card-name">Silver Spot</div>
+      <div class="card-price">Live →</div>
+      <div class="card-chg up">TradingView Real-Time</div>
+    </a>
+    <a href="crypto.html" class="mkt-card">
+      <div class="card-icon">&#8383;</div>
+      <div class="card-label">Crypto</div>
+      <div class="card-sym">BTC/USD</div>
+      <div class="card-name">Bitcoin</div>
+      <div class="card-price">Live →</div>
+      <div class="card-chg up">TradingView Real-Time</div>
+    </a>
+    <a href="crypto.html" class="mkt-card">
+      <div class="card-icon">&#9830;</div>
+      <div class="card-label">Crypto</div>
+      <div class="card-sym">ETH/USD</div>
+      <div class="card-name">Ethereum</div>
+      <div class="card-price">Live →</div>
+      <div class="card-chg up">TradingView Real-Time</div>
+    </a>
+    <a href="forex.html" class="mkt-card">
+      <div class="card-icon">&#8364;</div>
+      <div class="card-label">Forex</div>
+      <div class="card-sym">EUR/USD</div>
+      <div class="card-name">Euro / US Dollar</div>
+      <div class="card-price">Live →</div>
+      <div class="card-chg up">TradingView Real-Time</div>
+    </a>
+    <a href="forex.html" class="mkt-card">
+      <div class="card-icon">&#163;</div>
+      <div class="card-label">Forex</div>
+      <div class="card-sym">GBP/USD</div>
+      <div class="card-name">Pound / US Dollar</div>
+      <div class="card-price">Live →</div>
+      <div class="card-chg up">TradingView Real-Time</div>
+    </a>
+    <a href="indices.html" class="mkt-card">
+      <div class="card-icon">&#128200;</div>
+      <div class="card-label">Index</div>
+      <div class="card-sym">SPX</div>
+      <div class="card-name">S&amp;P 500</div>
+      <div class="card-price">Live →</div>
+      <div class="card-chg up">TradingView Real-Time</div>
+    </a>
+    <a href="commodities.html" class="mkt-card">
+      <div class="card-icon">&#128167;</div>
+      <div class="card-label">Energy</div>
+      <div class="card-sym">WTI</div>
+      <div class="card-name">WTI Crude Oil</div>
+      <div class="card-price">Live →</div>
+      <div class="card-chg up">TradingView Real-Time</div>
+    </a>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="sec-hdr" style="margin-top:12px">
+    <div>
+      <div class="sec-title">Why This <span>Terminal</span></div>
+    </div>
+  </div>
+  <div class="gold-line"></div>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-icon">&#9654;</div>
+      <div class="feature-title">Live TradingView Charts</div>
+      <div class="feature-desc">Real-time candlestick charts powered by TradingView. 1m to Weekly timeframes.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#129360;</div>
+      <div class="feature-title">Gold &amp; Commodities</div>
+      <div class="feature-desc">Track Gold, Silver, Platinum, WTI and Brent Oil with institutional-grade charts.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#8383;</div>
+      <div class="feature-title">Crypto Markets</div>
+      <div class="feature-desc">BTC, ETH, SOL, BNB, XRP — all live from Binance and Bitstamp feeds.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#9995;</div>
+      <div class="feature-title">Forex Pairs</div>
+      <div class="feature-desc">All major pairs: EUR/USD, GBP/USD, USD/JPY, AUD/USD and more.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#129518;</div>
+      <div class="feature-title">Trading Calculator</div>
+      <div class="feature-desc">Pip value, P&amp;L, and currency converter tools for every trade.</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#128240;</div>
+      <div class="feature-title">Live Market News</div>
+      <div class="feature-desc">Real-time financial news and economic calendar — never miss a move.</div>
+    </div>
+  </div>
+
+  <!-- LIVE GOLD CHART PREVIEW -->
+  <div class="sec-hdr" style="margin-top:12px">
+    <div>
+      <div class="sec-title">Live <span>Gold Chart</span></div>
+      <div class="sec-sub">XAU/USD — Real-time from TradingView</div>
+    </div>
+    <a href="commodities.html" class="sec-link">Full page &rarr;</a>
+  </div>
+  <div class="gold-line"></div>
+  <div class="chart-box">
+    <div class="chart-box-header">
+      <div>
+        <div class="chart-sym-label">XAU/USD</div>
+        <div class="chart-sym-name">Gold Spot • Real-Time</div>
+      </div>
+      <div class="live-badge"><span class="live-dot"></span> LIVE</div>
+    </div>
+    <div class="chart-inner" id="home-chart"></div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Your Choice Trading Terminal</div>
+        <div class="footer-desc">Professional market data dashboard for Forex, Gold, Silver, Crypto and Indices. All charts powered by TradingView live data.</div>
+      </div>
+      <div>
+        <div class="footer-col-title">Markets</div>
+        <ul class="footer-links">
+          <li><a href="forex.html">Forex Pairs</a></li>
+          <li><a href="commodities.html">Commodities</a></li>
+          <li><a href="crypto.html">Cryptocurrency</a></li>
+          <li><a href="indices.html">Indices</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Tools</div>
+        <ul class="footer-links">
+          <li><a href="rates.html">Interest Rates</a></li>
+          <li><a href="news.html">Market News</a></li>
+          <li><a href="analysis.html">Analysis</a></li>
+          <li><a href="calculator.html">Calculator</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Info</div>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="https://www.tradingview.com" target="_blank">TradingView</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 Your Choice Trading Terminal</div>
+      <div class="footer-disclaimer">Charts and data powered by TradingView. This terminal is for informational purposes only. Not financial advice.</div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    injectTVChart('home-chart', 'FOREXCOM:XAUUSD', 'D', '1');
+  });
+</script>
+</body>
+</html>

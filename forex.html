@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Forex Charts — EUR/USD, GBP/USD, USD/JPY Live | Your Choice Trading Terminal</title>
+<meta name="description" content="Live Forex pair charts with TradingView. EUR/USD, GBP/USD, USD/JPY, USD/CHF, AUD/USD, USD/CAD, NZD/USD real-time candlestick charts.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9782;</text></svg>">
+</head>
+<body>
+
+<div id="topbar">
+  <div class="nav-inner">
+    <div class="logo"><span class="logo-text">Your Choice Trading Terminal</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="forex.html" class="active">Forex</a></li>
+      <li><a href="commodities.html">Commodities</a></li>
+      <li><a href="crypto.html">Crypto</a></li>
+      <li><a href="indices.html">Indices</a></li>
+      <li><a href="rates.html">Int. Rates</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="analysis.html">Analysis</a></li>
+      <li><a href="calculator.html">Calculator</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="live-badge"><span class="live-dot"></span> LIVE DATA</div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</div>
+<div id="mobile-menu">
+  <a href="index.html">Home</a><a href="forex.html">Forex Pairs</a><a href="commodities.html">Commodities</a>
+  <a href="crypto.html">Cryptocurrency</a><a href="indices.html">Indices</a><a href="rates.html">Interest Rates</a>
+  <a href="news.html">Market News</a><a href="analysis.html">Market Analysis</a><a href="calculator.html">Calculator</a><a href="contact.html">Contact</a>
+</div>
+
+<div id="ticker-wrap">
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {"symbols":[{"proName":"FOREXCOM:EURUSD","title":"EUR/USD"},{"proName":"FOREXCOM:GBPUSD","title":"GBP/USD"},{"proName":"FOREXCOM:USDJPY","title":"USD/JPY"},{"proName":"FOREXCOM:USDCHF","title":"USD/CHF"},{"proName":"FOREXCOM:AUDUSD","title":"AUD/USD"},{"proName":"FOREXCOM:USDCAD","title":"USD/CAD"},{"proName":"FOREXCOM:NZDUSD","title":"NZD/USD"},{"proName":"FOREXCOM:XAUUSD","title":"Gold"},{"proName":"BITSTAMP:BTCUSD","title":"Bitcoin"}],"showSymbolLogo":true,"isTransparent":true,"displayMode":"adaptive","colorTheme":"dark","locale":"en"}
+    </script>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="sec-hdr">
+    <div>
+      <div class="sec-title">Forex <span>Pairs</span></div>
+      <div class="sec-sub">Live TradingView candlestick charts — Candlestick • All Timeframes</div>
+    </div>
+    <div class="live-badge"><span class="live-dot"></span> REAL-TIME</div>
+  </div>
+  <div class="gold-line"></div>
+
+  <!-- Symbol Tabs -->
+  <div class="sym-tabs">
+    <button class="sym-tab active" data-sym="FOREXCOM:EURUSD" data-label="EUR/USD" data-name="Euro / US Dollar">EUR/USD</button>
+    <button class="sym-tab" data-sym="FOREXCOM:GBPUSD" data-label="GBP/USD" data-name="Pound / US Dollar">GBP/USD</button>
+    <button class="sym-tab" data-sym="FOREXCOM:USDJPY" data-label="USD/JPY" data-name="US Dollar / Japanese Yen">USD/JPY</button>
+    <button class="sym-tab" data-sym="FOREXCOM:USDCHF" data-label="USD/CHF" data-name="US Dollar / Swiss Franc">USD/CHF</button>
+    <button class="sym-tab" data-sym="FOREXCOM:AUDUSD" data-label="AUD/USD" data-name="Australian Dollar / USD">AUD/USD</button>
+    <button class="sym-tab" data-sym="FOREXCOM:USDCAD" data-label="USD/CAD" data-name="US Dollar / Canadian Dollar">USD/CAD</button>
+    <button class="sym-tab" data-sym="FOREXCOM:NZDUSD" data-label="NZD/USD" data-name="NZ Dollar / US Dollar">NZD/USD</button>
+  </div>
+
+  <!-- Main Chart -->
+  <div class="chart-box">
+    <div class="chart-box-header">
+      <div>
+        <div class="chart-sym-label" id="chart-sym-label">EUR/USD</div>
+        <div class="chart-sym-name" id="chart-sym-name">Euro / US Dollar</div>
+      </div>
+      <div class="tf-bar">
+        <button class="tf-btn" data-tf="1">1m</button>
+        <button class="tf-btn" data-tf="5">5m</button>
+        <button class="tf-btn" data-tf="15">15m</button>
+        <button class="tf-btn" data-tf="60">1H</button>
+        <button class="tf-btn" data-tf="240">4H</button>
+        <button class="tf-btn active" data-tf="D">1D</button>
+        <button class="tf-btn" data-tf="W">1W</button>
+      </div>
+    </div>
+    <div class="chart-inner" id="main-chart"></div>
+  </div>
+
+  <!-- Mini Overview Grid -->
+  <div class="sec-hdr" style="margin-top:8px">
+    <div class="sec-title">All <span>Pairs Overview</span></div>
+  </div>
+  <div class="gold-line"></div>
+  <div class="mini-grid">
+    <div class="mini-card"><div class="mini-header">EUR/USD</div><div class="mini-body" id="mini-eurusd"></div></div>
+    <div class="mini-card"><div class="mini-header">GBP/USD</div><div class="mini-body" id="mini-gbpusd"></div></div>
+    <div class="mini-card"><div class="mini-header">USD/JPY</div><div class="mini-body" id="mini-usdjpy"></div></div>
+    <div class="mini-card"><div class="mini-header">USD/CHF</div><div class="mini-body" id="mini-usdchf"></div></div>
+    <div class="mini-card"><div class="mini-header">AUD/USD</div><div class="mini-body" id="mini-audusd"></div></div>
+    <div class="mini-card"><div class="mini-header">USD/CAD</div><div class="mini-body" id="mini-usdcad"></div></div>
+    <div class="mini-card"><div class="mini-header">NZD/USD</div><div class="mini-body" id="mini-nzdusd"></div></div>
+  </div>
+</div>
+
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 Your Choice Trading Terminal</div>
+      <div class="footer-disclaimer">Charts powered by TradingView. Informational purposes only. Not financial advice.</div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  initSymTabs('sym-tab', 'main-chart', 'FOREXCOM:EURUSD', 'D');
+  injectMini('mini-eurusd', 'FOREXCOM:EURUSD');
+  injectMini('mini-gbpusd', 'FOREXCOM:GBPUSD');
+  injectMini('mini-usdjpy', 'FOREXCOM:USDJPY');
+  injectMini('mini-usdchf', 'FOREXCOM:USDCHF');
+  injectMini('mini-audusd', 'FOREXCOM:AUDUSD');
+  injectMini('mini-usdcad', 'FOREXCOM:USDCAD');
+  injectMini('mini-nzdusd', 'FOREXCOM:NZDUSD');
+});
+</script>
+</body></html>

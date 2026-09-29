@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Trading Calculator — Pip, P&L & Currency Converter | Your Choice Trading Terminal</title>
+<meta name="description" content="Free trading calculators. Pip value calculator, profit and loss calculator, currency converter for Forex and Gold traders.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#129518;</text></svg>">
+</head>
+<body>
+<div id="topbar">
+  <div class="nav-inner">
+    <div class="logo"><span class="logo-text">Your Choice Trading Terminal</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="forex.html">Forex</a></li>
+      <li><a href="commodities.html">Commodities</a></li><li><a href="crypto.html">Crypto</a></li>
+      <li><a href="indices.html">Indices</a></li><li><a href="rates.html">Int. Rates</a></li>
+      <li><a href="news.html">News</a></li><li><a href="analysis.html">Analysis</a></li>
+      <li><a href="calculator.html" class="active">Calculator</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="live-badge"><span class="live-dot"></span> LIVE DATA</div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</div>
+<div id="mobile-menu">
+  <a href="index.html">Home</a><a href="forex.html">Forex Pairs</a><a href="commodities.html">Commodities</a>
+  <a href="crypto.html">Cryptocurrency</a><a href="indices.html">Indices</a><a href="rates.html">Interest Rates</a>
+  <a href="news.html">Market News</a><a href="analysis.html">Market Analysis</a><a href="calculator.html">Calculator</a><a href="contact.html">Contact</a>
+</div>
+<div id="ticker-wrap">
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {"symbols":[{"proName":"FOREXCOM:XAUUSD","title":"Gold"},{"proName":"FOREXCOM:EURUSD","title":"EUR/USD"},{"proName":"BITSTAMP:BTCUSD","title":"Bitcoin"},{"proName":"FOREXCOM:SPXUSD","title":"S&P 500"},{"proName":"FOREXCOM:GBPUSD","title":"GBP/USD"}],"showSymbolLogo":true,"isTransparent":true,"displayMode":"adaptive","colorTheme":"dark","locale":"en"}
+    </script>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="sec-hdr">
+    <div>
+      <div class="sec-title">Trading <span>Calculators</span></div>
+      <div class="sec-sub">Pip Value • Profit & Loss • Currency Converter</div>
+    </div>
+  </div>
+  <div class="gold-line"></div>
+
+  <!-- Calculator Tabs -->
+  <div class="calc-tabs">
+    <button class="calc-tab active" data-panel="pip-panel">&#129518; Pip Calculator</button>
+    <button class="calc-tab" data-panel="pl-panel">&#128200; P&amp;L Calculator</button>
+    <button class="calc-tab" data-panel="conv-panel">&#128176; Currency Converter</button>
+  </div>
+
+  <!-- PIP CALCULATOR -->
+  <div class="calc-panel active" id="pip-panel">
+    <div class="calc-card">
+      <div class="calc-title">Pip Value Calculator</div>
+      <div class="calc-desc">Calculate the monetary value of each pip based on your lot size and currency pair.</div>
+
+      <div class="form-row">
+        <label class="form-label">Currency Pair / Instrument</label>
+        <select class="form-select" id="pip-pair">
+          <optgroup label="Forex Majors">
+            <option value="EURUSD">EUR/USD</option>
+            <option value="GBPUSD">GBP/USD</option>
+            <option value="USDJPY">USD/JPY</option>
+            <option value="USDCHF">USD/CHF</option>
+            <option value="AUDUSD">AUD/USD</option>
+            <option value="USDCAD">USD/CAD</option>
+            <option value="NZDUSD">NZD/USD</option>
+          </optgroup>
+          <optgroup label="Commodities">
+            <option value="XAUUSD">XAU/USD (Gold)</option>
+            <option value="XAGUSD">XAG/USD (Silver)</option>
+            <option value="USOIL">WTI Crude Oil</option>
+          </optgroup>
+          <optgroup label="Crypto">
+            <option value="BTCUSD">BTC/USD (Bitcoin)</option>
+            <option value="ETHUSD">ETH/USD (Ethereum)</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="form-row-2">
+        <div class="form-row">
+          <label class="form-label">Lot Size</label>
+          <input type="number" class="form-input" id="pip-lots" placeholder="1.00" value="1" step="0.01" min="0.01">
+        </div>
+        <div class="form-row">
+          <label class="form-label">Number of Pips</label>
+          <input type="number" class="form-input" id="pip-pips" placeholder="10" value="10" min="0">
+        </div>
+      </div>
+      <div class="form-row">
+        <label class="form-label">Account Currency</label>
+        <select class="form-select" id="pip-acc">
+          <option value="USD">USD — US Dollar</option>
+          <option value="EUR">EUR — Euro</option>
+          <option value="GBP">GBP — British Pound</option>
+          <option value="INR">INR — Indian Rupee</option>
+        </select>
+      </div>
+      <button class="calc-btn" onclick="calcPip()">Calculate Pip Value</button>
+
+      <div class="calc-result" id="pip-result">
+        <div class="result-grid">
+          <div class="result-item"><div class="result-label">PIP VALUE / LOT</div><div class="result-value" id="pip-res-pv">-</div></div>
+          <div class="result-item"><div class="result-label">LOT SIZE</div><div class="result-value" id="pip-res-lots">-</div></div>
+          <div class="result-item"><div class="result-label">PIPS</div><div class="result-value" id="pip-res-pips">-</div></div>
+          <div class="result-item"><div class="result-label">TOTAL VALUE</div><div class="result-value text-gold" id="pip-res-total">-</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- P&L CALCULATOR -->
+  <div class="calc-panel" id="pl-panel">
+    <div class="calc-card">
+      <div class="calc-title">Profit & Loss Calculator</div>
+      <div class="calc-desc">Calculate your profit or loss based on entry price, exit price and lot size.</div>
+
+      <div class="form-row-2">
+        <div class="form-row">
+          <label class="form-label">Trade Type</label>
+          <select class="form-select" id="pl-type">
+            <option value="buy">Buy (Long)</option>
+            <option value="sell">Sell (Short)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Instrument</label>
+          <select class="form-select" id="pl-pair">
+            <option value="EURUSD">EUR/USD</option>
+            <option value="GBPUSD">GBP/USD</option>
+            <option value="USDJPY">USD/JPY</option>
+            <option value="XAUUSD">XAU/USD (Gold)</option>
+            <option value="BTCUSD">BTC/USD</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row-2">
+        <div class="form-row">
+          <label class="form-label">Entry Price</label>
+          <input type="number" class="form-input" id="pl-entry" placeholder="1.08500" step="0.00001">
+        </div>
+        <div class="form-row">
+          <label class="form-label">Exit Price</label>
+          <input type="number" class="form-input" id="pl-exit" placeholder="1.09000" step="0.00001">
+        </div>
+      </div>
+      <div class="form-row">
+        <label class="form-label">Lot Size</label>
+        <input type="number" class="form-input" id="pl-lots" placeholder="1.00" value="1" step="0.01" min="0.01">
+      </div>
+      <button class="calc-btn" onclick="calcPL()">Calculate P&amp;L</button>
+
+      <div class="calc-result" id="pl-result">
+        <div class="result-grid">
+          <div class="result-item"><div class="result-label">PIPS GAINED/LOST</div><div class="result-value" id="pl-res-pips">-</div></div>
+          <div class="result-item"><div class="result-label">PROFIT / LOSS (USD)</div><div class="result-value" id="pl-res-pl">-</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CURRENCY CONVERTER -->
+  <div class="calc-panel" id="conv-panel">
+    <div class="calc-card">
+      <div class="calc-title">Currency Converter</div>
+      <div class="calc-desc">Convert between currencies and metals at approximate market rates.</div>
+
+      <div class="form-row">
+        <label class="form-label">Amount</label>
+        <input type="number" class="form-input" id="conv-amount" placeholder="1000" value="1000">
+      </div>
+      <div class="form-row-2">
+        <div class="form-row">
+          <label class="form-label">From Currency</label>
+          <select class="form-select" id="conv-from">
+            <option value="USD">USD — US Dollar</option>
+            <option value="EUR">EUR — Euro</option>
+            <option value="GBP">GBP — British Pound</option>
+            <option value="JPY">JPY — Japanese Yen</option>
+            <option value="CHF">CHF — Swiss Franc</option>
+            <option value="AUD">AUD — Australian Dollar</option>
+            <option value="CAD">CAD — Canadian Dollar</option>
+            <option value="INR">INR — Indian Rupee</option>
+            <option value="NZD">NZD — NZ Dollar</option>
+            <option value="SGD">SGD — Singapore Dollar</option>
+            <option value="XAU">XAU — Gold (Troy Oz)</option>
+            <option value="XAG">XAG — Silver (Troy Oz)</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label class="form-label">To Currency</label>
+          <select class="form-select" id="conv-to">
+            <option value="INR">INR — Indian Rupee</option>
+            <option value="USD">USD — US Dollar</option>
+            <option value="EUR">EUR — Euro</option>
+            <option value="GBP">GBP — British Pound</option>
+            <option value="JPY">JPY — Japanese Yen</option>
+            <option value="CHF">CHF — Swiss Franc</option>
+            <option value="AUD">AUD — Australian Dollar</option>
+            <option value="CAD">CAD — Canadian Dollar</option>
+            <option value="NZD">NZD — NZ Dollar</option>
+            <option value="SGD">SGD — Singapore Dollar</option>
+            <option value="XAU">XAU — Gold (Troy Oz)</option>
+            <option value="XAG">XAG — Silver (Troy Oz)</option>
+          </select>
+        </div>
+      </div>
+      <button class="calc-btn" onclick="calcConvert()">Convert</button>
+
+      <div class="calc-result" id="conv-result">
+        <div class="result-item" style="text-align:center">
+          <div class="result-label">RESULT</div>
+          <div class="result-value text-gold" style="font-size:24px;margin-top:8px" id="conv-result-val">-</div>
+          <div style="font-size:11px;color:var(--text3);margin-top:6px">*Approximate rates. Use for reference only.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer id="footer"><div class="footer-inner"><div class="footer-bottom"><div class="footer-copy">&copy; 2026 Your Choice Trading Terminal</div><div class="footer-disclaimer">Calculator values are approximate. Use a broker platform for live trade calculations.</div></div></div></footer>
+<script src="js/data.js"></script><script src="js/main.js"></script>
+</body></html>

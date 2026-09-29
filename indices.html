@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Global Indices — S&P500, NASDAQ, DAX Live Charts | Your Choice Trading Terminal</title>
+<meta name="description" content="Live stock market index charts. S&P 500, NASDAQ 100, DAX 40, FTSE 100, Nikkei 225 real-time TradingView charts.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128200;</text></svg>">
+</head>
+<body>
+<div id="topbar">
+  <div class="nav-inner">
+    <div class="logo"><span class="logo-text">Your Choice Trading Terminal</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="forex.html">Forex</a></li>
+      <li><a href="commodities.html">Commodities</a></li><li><a href="crypto.html">Crypto</a></li>
+      <li><a href="indices.html" class="active">Indices</a></li>
+      <li><a href="rates.html">Int. Rates</a></li><li><a href="news.html">News</a></li>
+      <li><a href="analysis.html">Analysis</a></li><li><a href="calculator.html">Calculator</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="live-badge"><span class="live-dot"></span> LIVE DATA</div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</div>
+<div id="mobile-menu">
+  <a href="index.html">Home</a><a href="forex.html">Forex Pairs</a><a href="commodities.html">Commodities</a>
+  <a href="crypto.html">Cryptocurrency</a><a href="indices.html">Indices</a><a href="rates.html">Interest Rates</a>
+  <a href="news.html">Market News</a><a href="analysis.html">Market Analysis</a><a href="calculator.html">Calculator</a><a href="contact.html">Contact</a>
+</div>
+<div id="ticker-wrap">
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {"symbols":[{"proName":"FOREXCOM:SPXUSD","title":"S&P 500"},{"proName":"FOREXCOM:NSXUSD","title":"NASDAQ 100"},{"proName":"INDEX:DEU40","title":"DAX 40"},{"proName":"INDEX:UKX","title":"FTSE 100"},{"proName":"INDEX:NKY","title":"Nikkei 225"},{"proName":"FOREXCOM:XAUUSD","title":"Gold"},{"proName":"BITSTAMP:BTCUSD","title":"Bitcoin"}],"showSymbolLogo":true,"isTransparent":true,"displayMode":"adaptive","colorTheme":"dark","locale":"en"}
+    </script>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="sec-hdr">
+    <div>
+      <div class="sec-title">Global <span>Indices</span></div>
+      <div class="sec-sub">S&amp;P 500 • NASDAQ • DAX • FTSE • Nikkei — Live TradingView Data</div>
+    </div>
+    <div class="live-badge"><span class="live-dot"></span> REAL-TIME</div>
+  </div>
+  <div class="gold-line"></div>
+
+  <div class="sym-tabs">
+    <button class="sym-tab active" data-sym="FOREXCOM:SPXUSD" data-label="S&P 500" data-name="Standard & Poor's 500">&#127482;&#127480; SPX</button>
+    <button class="sym-tab" data-sym="FOREXCOM:NSXUSD" data-label="NASDAQ 100" data-name="NASDAQ 100 Index">&#128202; NDX</button>
+    <button class="sym-tab" data-sym="INDEX:DEU40" data-label="DAX 40" data-name="German DAX 40">&#127465;&#127466; DAX</button>
+    <button class="sym-tab" data-sym="INDEX:UKX" data-label="FTSE 100" data-name="UK FTSE 100">&#127468;&#127463; FTSE</button>
+    <button class="sym-tab" data-sym="INDEX:NKY" data-label="Nikkei 225" data-name="Japan Nikkei 225">&#127471;&#127477; NIKKEI</button>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-box-header">
+      <div>
+        <div class="chart-sym-label" id="chart-sym-label">S&P 500</div>
+        <div class="chart-sym-name" id="chart-sym-name">Standard & Poor's 500</div>
+      </div>
+      <div class="tf-bar">
+        <button class="tf-btn" data-tf="1">1m</button>
+        <button class="tf-btn" data-tf="5">5m</button>
+        <button class="tf-btn" data-tf="15">15m</button>
+        <button class="tf-btn" data-tf="60">1H</button>
+        <button class="tf-btn" data-tf="240">4H</button>
+        <button class="tf-btn active" data-tf="D">1D</button>
+        <button class="tf-btn" data-tf="W">1W</button>
+      </div>
+    </div>
+    <div class="chart-inner" id="main-chart"></div>
+  </div>
+
+  <div class="sec-hdr" style="margin-top:8px"><div class="sec-title">All <span>Indices Overview</span></div></div>
+  <div class="gold-line"></div>
+  <div class="mini-grid">
+    <div class="mini-card"><div class="mini-header">&#127482;&#127480; S&amp;P 500</div><div class="mini-body" id="mini-spx"></div></div>
+    <div class="mini-card"><div class="mini-header">&#128202; NASDAQ 100</div><div class="mini-body" id="mini-ndx"></div></div>
+    <div class="mini-card"><div class="mini-header">&#127465;&#127466; DAX 40</div><div class="mini-body" id="mini-dax"></div></div>
+    <div class="mini-card"><div class="mini-header">&#127468;&#127463; FTSE 100</div><div class="mini-body" id="mini-ftse"></div></div>
+    <div class="mini-card"><div class="mini-header">&#127471;&#127477; Nikkei 225</div><div class="mini-body" id="mini-nky"></div></div>
+  </div>
+</div>
+
+<footer id="footer"><div class="footer-inner"><div class="footer-bottom"><div class="footer-copy">&copy; 2026 Your Choice Trading Terminal</div><div class="footer-disclaimer">Charts powered by TradingView. Not financial advice.</div></div></div></footer>
+<script src="js/data.js"></script><script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  initSymTabs('sym-tab', 'main-chart', 'FOREXCOM:SPXUSD', 'D');
+  injectMini('mini-spx',  'FOREXCOM:SPXUSD', 'rgba(212,175,55,1)');
+  injectMini('mini-ndx',  'FOREXCOM:NSXUSD', 'rgba(0,168,255,1)');
+  injectMini('mini-dax',  'INDEX:DEU40',     'rgba(240,192,64,1)');
+  injectMini('mini-ftse', 'INDEX:UKX',       'rgba(212,175,55,1)');
+  injectMini('mini-nky',  'INDEX:NKY',       'rgba(240,100,100,1)');
+});
+</script>
+</body></html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Gold, Silver & Commodities Charts | Your Choice Trading Terminal</title>
+<meta name="description" content="Live Gold XAU/USD, Silver XAG/USD, Platinum, WTI Oil and Brent Oil charts. Real-time TradingView candlestick charts.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#129360;</text></svg>">
+</head>
+<body>
+<div id="topbar">
+  <div class="nav-inner">
+    <div class="logo"><span class="logo-text">Your Choice Trading Terminal</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="forex.html">Forex</a></li>
+      <li><a href="commodities.html" class="active">Commodities</a></li>
+      <li><a href="crypto.html">Crypto</a></li>
+      <li><a href="indices.html">Indices</a></li>
+      <li><a href="rates.html">Int. Rates</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="analysis.html">Analysis</a></li>
+      <li><a href="calculator.html">Calculator</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="live-badge"><span class="live-dot"></span> LIVE DATA</div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</div>
+<div id="mobile-menu">
+  <a href="index.html">Home</a><a href="forex.html">Forex Pairs</a><a href="commodities.html">Commodities</a>
+  <a href="crypto.html">Cryptocurrency</a><a href="indices.html">Indices</a><a href="rates.html">Interest Rates</a>
+  <a href="news.html">Market News</a><a href="analysis.html">Market Analysis</a><a href="calculator.html">Calculator</a><a href="contact.html">Contact</a>
+</div>
+<div id="ticker-wrap">
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {"symbols":[{"proName":"FOREXCOM:XAUUSD","title":"Gold"},{"proName":"FOREXCOM:XAGUSD","title":"Silver"},{"proName":"FOREXCOM:XPTUSD","title":"Platinum"},{"proName":"TVC:USOIL","title":"WTI Oil"},{"proName":"TVC:UKOIL","title":"Brent Oil"},{"proName":"BITSTAMP:BTCUSD","title":"Bitcoin"},{"proName":"FOREXCOM:EURUSD","title":"EUR/USD"}],"showSymbolLogo":true,"isTransparent":true,"displayMode":"adaptive","colorTheme":"dark","locale":"en"}
+    </script>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="sec-hdr">
+    <div>
+      <div class="sec-title">Commodities <span>Charts</span></div>
+      <div class="sec-sub">Gold • Silver • Platinum • WTI Oil • Brent Oil — Live TradingView Data</div>
+    </div>
+    <div class="live-badge"><span class="live-dot"></span> REAL-TIME</div>
+  </div>
+  <div class="gold-line"></div>
+
+  <div class="sym-tabs">
+    <button class="sym-tab active" data-sym="FOREXCOM:XAUUSD" data-label="XAU/USD" data-name="Gold Spot">&#129360; Gold</button>
+    <button class="sym-tab" data-sym="FOREXCOM:XAGUSD" data-label="XAG/USD" data-name="Silver Spot">&#9899; Silver</button>
+    <button class="sym-tab" data-sym="FOREXCOM:XPTUSD" data-label="XPT/USD" data-name="Platinum Spot">&#11036; Platinum</button>
+    <button class="sym-tab" data-sym="TVC:USOIL" data-label="WTI Crude" data-name="WTI Crude Oil">&#128167; WTI Oil</button>
+    <button class="sym-tab" data-sym="TVC:UKOIL" data-label="Brent Crude" data-name="Brent Crude Oil">&#128165; Brent Oil</button>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-box-header">
+      <div>
+        <div class="chart-sym-label" id="chart-sym-label">XAU/USD</div>
+        <div class="chart-sym-name" id="chart-sym-name">Gold Spot</div>
+      </div>
+      <div class="tf-bar">
+        <button class="tf-btn" data-tf="1">1m</button>
+        <button class="tf-btn" data-tf="5">5m</button>
+        <button class="tf-btn" data-tf="15">15m</button>
+        <button class="tf-btn" data-tf="60">1H</button>
+        <button class="tf-btn" data-tf="240">4H</button>
+        <button class="tf-btn active" data-tf="D">1D</button>
+        <button class="tf-btn" data-tf="W">1W</button>
+      </div>
+    </div>
+    <div class="chart-inner" id="main-chart"></div>
+  </div>
+
+  <div class="sec-hdr" style="margin-top:8px">
+    <div class="sec-title">All <span>Commodities Overview</span></div>
+  </div>
+  <div class="gold-line"></div>
+  <div class="mini-grid">
+    <div class="mini-card"><div class="mini-header">&#129360; Gold • XAU/USD</div><div class="mini-body" id="mini-gold"></div></div>
+    <div class="mini-card"><div class="mini-header">&#9899; Silver • XAG/USD</div><div class="mini-body" id="mini-silver"></div></div>
+    <div class="mini-card"><div class="mini-header">&#11036; Platinum • XPT/USD</div><div class="mini-body" id="mini-plat"></div></div>
+    <div class="mini-card"><div class="mini-header">&#128167; WTI Crude Oil</div><div class="mini-body" id="mini-wti"></div></div>
+    <div class="mini-card"><div class="mini-header">&#128165; Brent Crude Oil</div><div class="mini-body" id="mini-brent"></div></div>
+  </div>
+</div>
+
+<footer id="footer"><div class="footer-inner"><div class="footer-bottom"><div class="footer-copy">&copy; 2026 Your Choice Trading Terminal</div><div class="footer-disclaimer">Charts powered by TradingView. Not financial advice.</div></div></div></footer>
+
+<script src="js/data.js"></script><script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  initSymTabs('sym-tab', 'main-chart', 'FOREXCOM:XAUUSD', 'D');
+  injectMini('mini-gold',   'FOREXCOM:XAUUSD', 'rgba(212,175,55,1)');
+  injectMini('mini-silver', 'FOREXCOM:XAGUSD', 'rgba(192,192,192,1)');
+  injectMini('mini-plat',   'FOREXCOM:XPTUSD', 'rgba(229,228,226,1)');
+  injectMini('mini-wti',    'TVC:USOIL',       'rgba(180,120,60,1)');
+  injectMini('mini-brent',  'TVC:UKOIL',       'rgba(200,140,60,1)');
+});
+</script>
+</body></html>

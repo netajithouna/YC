@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Crypto Charts — Bitcoin, Ethereum, Solana Live | Your Choice Trading Terminal</title>
+<meta name="description" content="Live cryptocurrency charts. Bitcoin BTC, Ethereum ETH, Solana SOL, BNB, XRP real-time TradingView candlestick charts.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#8383;</text></svg>">
+</head>
+<body>
+<div id="topbar">
+  <div class="nav-inner">
+    <div class="logo"><span class="logo-text">Your Choice Trading Terminal</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="forex.html">Forex</a></li>
+      <li><a href="commodities.html">Commodities</a></li>
+      <li><a href="crypto.html" class="active">Crypto</a></li>
+      <li><a href="indices.html">Indices</a></li><li><a href="rates.html">Int. Rates</a></li>
+      <li><a href="news.html">News</a></li><li><a href="analysis.html">Analysis</a></li>
+      <li><a href="calculator.html">Calculator</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="live-badge"><span class="live-dot"></span> LIVE DATA</div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</div>
+<div id="mobile-menu">
+  <a href="index.html">Home</a><a href="forex.html">Forex Pairs</a><a href="commodities.html">Commodities</a>
+  <a href="crypto.html">Cryptocurrency</a><a href="indices.html">Indices</a><a href="rates.html">Interest Rates</a>
+  <a href="news.html">Market News</a><a href="analysis.html">Market Analysis</a><a href="calculator.html">Calculator</a><a href="contact.html">Contact</a>
+</div>
+<div id="ticker-wrap">
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {"symbols":[{"proName":"BITSTAMP:BTCUSD","title":"Bitcoin"},{"proName":"BITSTAMP:ETHUSD","title":"Ethereum"},{"proName":"BINANCE:SOLUSDT","title":"Solana"},{"proName":"BINANCE:BNBUSDT","title":"BNB"},{"proName":"BINANCE:XRPUSDT","title":"XRP"},{"proName":"FOREXCOM:XAUUSD","title":"Gold"},{"proName":"FOREXCOM:EURUSD","title":"EUR/USD"}],"showSymbolLogo":true,"isTransparent":true,"displayMode":"adaptive","colorTheme":"dark","locale":"en"}
+    </script>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="sec-hdr">
+    <div>
+      <div class="sec-title">Crypto <span>Charts</span></div>
+      <div class="sec-sub">Bitcoin • Ethereum • Solana • BNB • XRP — Live TradingView Data</div>
+    </div>
+    <div class="live-badge"><span class="live-dot"></span> REAL-TIME</div>
+  </div>
+  <div class="gold-line"></div>
+
+  <div class="sym-tabs">
+    <button class="sym-tab active" data-sym="BITSTAMP:BTCUSD" data-label="BTC/USD" data-name="Bitcoin">&#8383; Bitcoin</button>
+    <button class="sym-tab" data-sym="BITSTAMP:ETHUSD" data-label="ETH/USD" data-name="Ethereum">&#9830; Ethereum</button>
+    <button class="sym-tab" data-sym="BINANCE:SOLUSDT" data-label="SOL/USDT" data-name="Solana">&#9728; Solana</button>
+    <button class="sym-tab" data-sym="BINANCE:BNBUSDT" data-label="BNB/USDT" data-name="BNB">&#11088; BNB</button>
+    <button class="sym-tab" data-sym="BINANCE:XRPUSDT" data-label="XRP/USDT" data-name="Ripple XRP">&#128171; XRP</button>
+  </div>
+
+  <div class="chart-box">
+    <div class="chart-box-header">
+      <div>
+        <div class="chart-sym-label" id="chart-sym-label">BTC/USD</div>
+        <div class="chart-sym-name" id="chart-sym-name">Bitcoin</div>
+      </div>
+      <div class="tf-bar">
+        <button class="tf-btn" data-tf="1">1m</button>
+        <button class="tf-btn" data-tf="5">5m</button>
+        <button class="tf-btn" data-tf="15">15m</button>
+        <button class="tf-btn" data-tf="60">1H</button>
+        <button class="tf-btn" data-tf="240">4H</button>
+        <button class="tf-btn active" data-tf="D">1D</button>
+        <button class="tf-btn" data-tf="W">1W</button>
+      </div>
+    </div>
+    <div class="chart-inner" id="main-chart"></div>
+  </div>
+
+  <div class="sec-hdr" style="margin-top:8px"><div class="sec-title">All <span>Crypto Overview</span></div></div>
+  <div class="gold-line"></div>
+  <div class="mini-grid">
+    <div class="mini-card"><div class="mini-header">&#8383; Bitcoin • BTC/USD</div><div class="mini-body" id="mini-btc"></div></div>
+    <div class="mini-card"><div class="mini-header">&#9830; Ethereum • ETH/USD</div><div class="mini-body" id="mini-eth"></div></div>
+    <div class="mini-card"><div class="mini-header">&#9728; Solana • SOL/USDT</div><div class="mini-body" id="mini-sol"></div></div>
+    <div class="mini-card"><div class="mini-header">&#11088; BNB/USDT</div><div class="mini-body" id="mini-bnb"></div></div>
+    <div class="mini-card"><div class="mini-header">&#128171; XRP/USDT</div><div class="mini-body" id="mini-xrp"></div></div>
+  </div>
+</div>
+
+<footer id="footer"><div class="footer-inner"><div class="footer-bottom"><div class="footer-copy">&copy; 2026 Your Choice Trading Terminal</div><div class="footer-disclaimer">Charts powered by TradingView. Not financial advice.</div></div></div></footer>
+<script src="js/data.js"></script><script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  initSymTabs('sym-tab', 'main-chart', 'BITSTAMP:BTCUSD', 'D');
+  injectMini('mini-btc', 'BITSTAMP:BTCUSD', 'rgba(247,147,26,1)');
+  injectMini('mini-eth', 'BITSTAMP:ETHUSD', 'rgba(98,126,234,1)');
+  injectMini('mini-sol', 'BINANCE:SOLUSDT', 'rgba(150,100,255,1)');
+  injectMini('mini-bnb', 'BINANCE:BNBUSDT', 'rgba(243,186,47,1)');
+  injectMini('mini-xrp', 'BINANCE:XRPUSDT', 'rgba(0,168,255,1)');
+});
+</script>
+</body></html>

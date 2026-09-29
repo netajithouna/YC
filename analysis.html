@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Market Analysis & Sentiment | Your Choice Trading Terminal</title>
+<meta name="description" content="Live market analysis, sentiment data, Fear & Greed index, market heatmap and technical screener. TradingView powered market analysis dashboard.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#129504;</text></svg>">
+</head>
+<body>
+<div id="topbar">
+  <div class="nav-inner">
+    <div class="logo"><span class="logo-text">Your Choice Trading Terminal</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="forex.html">Forex</a></li>
+      <li><a href="commodities.html">Commodities</a></li><li><a href="crypto.html">Crypto</a></li>
+      <li><a href="indices.html">Indices</a></li><li><a href="rates.html">Int. Rates</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="analysis.html" class="active">Analysis</a></li>
+      <li><a href="calculator.html">Calculator</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="live-badge"><span class="live-dot"></span> LIVE DATA</div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</div>
+<div id="mobile-menu">
+  <a href="index.html">Home</a><a href="forex.html">Forex Pairs</a><a href="commodities.html">Commodities</a>
+  <a href="crypto.html">Cryptocurrency</a><a href="indices.html">Indices</a><a href="rates.html">Interest Rates</a>
+  <a href="news.html">Market News</a><a href="analysis.html">Market Analysis</a><a href="calculator.html">Calculator</a><a href="contact.html">Contact</a>
+</div>
+<div id="ticker-wrap">
+  <div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {"symbols":[{"proName":"FOREXCOM:XAUUSD","title":"Gold"},{"proName":"BITSTAMP:BTCUSD","title":"Bitcoin"},{"proName":"FOREXCOM:EURUSD","title":"EUR/USD"},{"proName":"FOREXCOM:SPXUSD","title":"S&P 500"},{"proName":"FOREXCOM:GBPUSD","title":"GBP/USD"},{"proName":"TVC:USOIL","title":"WTI Oil"}],"showSymbolLogo":true,"isTransparent":true,"displayMode":"adaptive","colorTheme":"dark","locale":"en"}
+    </script>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="sec-hdr">
+    <div>
+      <div class="sec-title">Market <span>Analysis</span></div>
+      <div class="sec-sub">Sentiment • Heatmap • Technical Screener • COT Data</div>
+    </div>
+    <div class="live-badge"><span class="live-dot"></span> REAL-TIME</div>
+  </div>
+  <div class="gold-line"></div>
+
+  <!-- Sentiment Cards -->
+  <div class="sentiment-grid" id="sent-grid">
+    <div class="sentiment-card">
+      <div class="sent-label">USD Sentiment</div>
+      <div class="sent-val">62</div>
+      <div class="sent-tag bull">Bullish</div>
+    </div>
+    <div class="sentiment-card">
+      <div class="sent-label">Gold Sentiment</div>
+      <div class="sent-val">78</div>
+      <div class="sent-tag bull">Strong Bull</div>
+    </div>
+    <div class="sentiment-card">
+      <div class="sent-label">BTC Sentiment</div>
+      <div class="sent-val">54</div>
+      <div class="sent-tag neu">Neutral</div>
+    </div>
+    <div class="sentiment-card">
+      <div class="sent-label">EUR Sentiment</div>
+      <div class="sent-val">41</div>
+      <div class="sent-tag bear">Bearish</div>
+    </div>
+  </div>
+
+  <!-- Heatmap + Screener -->
+  <div class="analysis-grid">
+    <div class="analysis-card">
+      <div class="analysis-card-header">&#127777; Crypto Heatmap</div>
+      <div class="analysis-card-body" id="heatmap-widget"></div>
+    </div>
+    <div class="analysis-card">
+      <div class="analysis-card-header">&#128201; Technical Screener — Forex</div>
+      <div class="analysis-card-body" id="screener-widget"></div>
+    </div>
+  </div>
+
+  <!-- Market Overview -->
+  <div class="sec-hdr" style="margin-top:8px">
+    <div class="sec-title">Market <span>Overview</span></div>
+  </div>
+  <div class="gold-line"></div>
+  <div class="analysis-full">
+    <div class="analysis-card-header" style="padding:14px 18px;border-bottom:1px solid var(--border);background:var(--bg2);font-size:13px;font-weight:700;color:var(--gold2)">&#127758; Global Market Overview</div>
+    <div class="analysis-full-body" id="overview-widget"></div>
+  </div>
+
+  <!-- Economic Calendar -->
+  <div class="sec-hdr" style="margin-top:8px">
+    <div class="sec-title">Economic <span>Calendar</span></div>
+  </div>
+  <div class="gold-line"></div>
+  <div class="analysis-full">
+    <div class="analysis-card-header" style="padding:14px 18px;border-bottom:1px solid var(--border);background:var(--bg2);font-size:13px;font-weight:700;color:var(--gold2)">&#128197; High-Impact Events</div>
+    <div style="height:500px" id="cal-widget"></div>
+  </div>
+</div>
+
+<footer id="footer"><div class="footer-inner"><div class="footer-bottom"><div class="footer-copy">&copy; 2026 Your Choice Trading Terminal</div><div class="footer-disclaimer">Analysis powered by TradingView. Not financial advice.</div></div></div></footer>
+
+<script src="js/data.js"></script><script src="js/main.js"></script>
+<script>
+function injectTV(id, src, cfg) {
+  const c = document.getElementById(id);
+  if (!c) return;
+  c.innerHTML = '';
+  const wrap = document.createElement('div');
+  wrap.className = 'tradingview-widget-container';
+  wrap.style.cssText = 'width:100%;height:100%';
+  const inner = document.createElement('div');
+  inner.className = 'tradingview-widget-container__widget';
+  inner.style.cssText = 'width:100%;height:100%';
+  wrap.appendChild(inner);
+  const sc = document.createElement('script');
+  sc.type = 'text/javascript';
+  sc.src = 'https://s3.tradingview.com/external-embedding/' + src;
+  sc.async = true;
+  sc.textContent = JSON.stringify(cfg);
+  wrap.appendChild(sc);
+  c.appendChild(wrap);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  injectTV('heatmap-widget', 'embed-widget-crypto-coins-heatmap.js', {
+    dataSource: 'Crypto',
+    blockSize: 'market_cap_calc',
+    blockColor: 'change',
+    locale: 'en',
+    colorTheme: 'dark',
+    isTransparent: true,
+    width: '100%',
+    height: '100%'
+  });
+  injectTV('screener-widget', 'embed-widget-screener.js', {
+    width: '100%',
+    height: '100%',
+    defaultColumn: 'overview',
+    defaultScreen: 'forex',
+    market: 'forex',
+    showToolbar: true,
+    colorTheme: 'dark',
+    locale: 'en',
+    isTransparent: true
+  });
+  injectTV('overview-widget', 'embed-widget-market-overview.js', {
+    colorTheme: 'dark',
+    dateRange: '12M',
+    showChart: true,
+    locale: 'en',
+    isTransparent: true,
+    showSymbolLogo: true,
+    showFloatingTooltip: false,
+    width: '100%',
+    height: '100%',
+    tabs: [
+      { title: 'Forex', symbols: [{s:'FOREXCOM:EURUSD'},{s:'FOREXCOM:GBPUSD'},{s:'FOREXCOM:USDJPY'},{s:'FOREXCOM:AUDUSD'},{s:'FOREXCOM:USDCHF'}] },
+      { title: 'Crypto', symbols: [{s:'BITSTAMP:BTCUSD'},{s:'BITSTAMP:ETHUSD'},{s:'BINANCE:SOLUSDT'},{s:'BINANCE:BNBUSDT'}] },
+      { title: 'Commodities', symbols: [{s:'FOREXCOM:XAUUSD'},{s:'FOREXCOM:XAGUSD'},{s:'TVC:USOIL'},{s:'TVC:UKOIL'}] },
+      { title: 'Indices', symbols: [{s:'FOREXCOM:SPXUSD'},{s:'FOREXCOM:NSXUSD'},{s:'INDEX:DEU40'},{s:'INDEX:UKX'}] }
+    ]
+  });
+  injectTV('cal-widget', 'embed-widget-events.js', {
+    colorTheme: 'dark',
+    isTransparent: true,
+    width: '100%',
+    height: '100%',
+    locale: 'en',
+    importanceFilter: '0,1',
+    countryFilter: 'us,eu,gb,jp,in,ch,ca,au'
+  });
+});
+</script>
+</body></html>
